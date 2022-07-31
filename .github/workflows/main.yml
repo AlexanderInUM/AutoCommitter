@@ -18,7 +18,7 @@ jobs:
         run: |
           git config --local user.email "softwarelab@yeah.net"
           git config --local user.name "Ezharjan"
-          git remote set-url origin https://${{ github.actor }}:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}
+          git remote set-url origin https://${{ github.actor }}:${{ secrets.TOKEN }}@github.com/${{ github.repository }}
           git pull --rebase
           git commit --allow-empty -m "auto commit"
           git push
