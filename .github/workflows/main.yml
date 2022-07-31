@@ -1,11 +1,10 @@
 name: committer
 
+
 on:
   push:
-    branches:
-      - master
- schedule:
-   - cron: "1,3,4,7 * * * *"
+  schedule:
+    - cron: "1,3,4,7 * * * *"
 
 jobs:
   autogreen:
