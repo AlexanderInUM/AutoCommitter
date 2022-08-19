@@ -1,23 +1,23 @@
-name: committer
+# name: committer
 
 
-on:
-  push:
-  schedule:
-    - cron: "1,7,11,13,23,37,47,53 * * * *"
+# on:
+#   push:
+#   schedule:
+#     - cron: "1,7,11,13,23,37,47,53 * * * *"
 
-jobs:
-  autogreen:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Clone repository
-        uses: actions/checkout@v3
+# jobs:
+#   autogreen:
+#     runs-on: ubuntu-latest
+#     steps:
+#       - name: Clone repository
+#         uses: actions/checkout@v3
 
-      - name: Auto Green
-        run: |
-          git config --local user.email "softwarelab@yeah.net"
-          git config --local user.name "Ezharjan"
-          git remote set-url origin https://${{ github.actor }}:${{ secrets.TOKEN }}@github.com/${{ github.repository }}
-          git pull --rebase
-          git commit --allow-empty -m "auto commit"
-          git push
+#       - name: Auto Green
+#         run: |
+#           git config --local user.email "softwarelab@yeah.net"
+#           git config --local user.name "Ezharjan"
+#           git remote set-url origin https://${{ github.actor }}:${{ secrets.TOKEN }}@github.com/${{ github.repository }}
+#           git pull --rebase
+#           git commit --allow-empty -m "auto commit"
+#           git push
